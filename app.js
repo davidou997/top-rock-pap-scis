@@ -27,7 +27,7 @@ function getComputerChoice() {
  */
 function playRound(playerSelection, computerSelection) {
     let playerSelectionName = playerSelection.toLowerCase();
-    
+
     if (playerSelectionName in move) {
         let playerSelectionVal = move[playerSelection.toLowerCase()]
         let val = playerSelectionVal - computerSelection;
@@ -54,7 +54,7 @@ function game() {
     for(let i = 0; i < 5; i++) {
         let userChoice = prompt("Please type one of the following: rock | paper | scissors");
         let result = playRound(userChoice, getComputerChoice());
-
+        console.log(`Round ${i + 1}`)
         if (result === null) { //invalid input
             console.log(`Invalid input, please try again`);
             i--;
