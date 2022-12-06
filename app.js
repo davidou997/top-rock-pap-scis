@@ -27,8 +27,7 @@ function getComputerChoice() {
  */
 function playRound(playerSelection, computerSelection) {
     let playerSelectionName = playerSelection.toLowerCase();
-    console.log(playerSelection)
-    console.log(computerSelection)
+    
     if (playerSelectionName in move) {
         let playerSelectionVal = move[playerSelection.toLowerCase()]
         let val = playerSelectionVal - computerSelection;
@@ -41,10 +40,8 @@ function playRound(playerSelection, computerSelection) {
         } else {
             result = roundResult.LOSE;
         }
-        console.log(result)
         return result;
     } else {
-        console.log(`You cannot pick the move ${playerSelection}.`)
         return null;
     }
 }
