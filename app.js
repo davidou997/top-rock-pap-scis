@@ -48,3 +48,7 @@ function playRound(playerSelection, computerSelection) {
         return null;
     }
 }
+
+function game() {
+
+}
