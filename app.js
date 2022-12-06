@@ -50,5 +50,43 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+    let userScore = 0;
+    let computerScore = 0;
 
+    console.log('Game Start')
+    for(let i = 0; i < 5; i++) {
+        let userChoice = prompt("Please type one of the following: rock | paper | scissors");
+        let result = playRound(userChoice, getComputerChoice());
+
+        if (result === null) { //invalid input
+            console.log(`Invalid input, please try again`);
+            i--;
+        } else { //valid input
+            switch(result) {
+                case roundResult.WIN:
+                    console.log(`Player Wins`);
+                    userScore++;
+                    break;
+                case roundResult.LOSE:
+                    console.log(`Computer Wins`);
+                    computerScore++;
+                    break;
+                default:
+                    console.log(`Tie`);
+                    break;
+            }
+            console.log(`Current score: ${userScore} | ${computerScore}`);
+        }
+    }
+
+    let result;
+    if (userScore > computerScore) {
+        result = 'User wins'
+    } else if (userScore < computerScore) {
+        result = 'Computer wins'
+    } else {
+        result = 'Tie'
+    }
+    console.log(`Final score: ${userScore} | ${computerScore}`)
+    console.log(`Result: ${result}`)
 }
